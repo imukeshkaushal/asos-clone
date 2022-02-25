@@ -1,0 +1,44 @@
+#footer{
+    width: 100%;
+    height: auto;
+    background-color: rgb(238,238,238);
+}
+#footertop{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+#footerend{
+    height: 18%;
+    width: 100%;
+    background-color: rgb(219, 218, 218);
+    display: flex;
+    justify-content: space-between;
+}
+#footertop>div{
+    width: 22%;
+    height: 90%;
+}
+.mainheading{
+    padding-left: 5%;
+    font-family: futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+p{
+    font-size: 13px;
+    font-family:futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
+    padding-left: 5%;
+}   
+#copyright{
+    font-size: 13px;
+    font-family:futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
+    padding: 5px 0px 5px 25px;
+
+}
+#footermenu{
+    font-size: 13px;
+    font-family:futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
+    padding: 5px 30px 5px 25px;
+}

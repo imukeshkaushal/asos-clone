@@ -1,0 +1,72 @@
+#navbar{
+    background-color: black;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    /* position: fixed; */
+
+}
+body{
+    margin: 0px;
+}
+#container{
+    width: 65%;
+    margin: auto;
+    display: flex;
+}
+#left{
+    width: 35%;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+#right{
+    border-left: 1px solid rgba(255, 255, 255, 0.582);
+    width: 70%;
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    padding:10px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+#logo{
+    font-size: 200%;
+    width: 40%;
+    font-weight: bold;
+    padding: 10px;
+    padding-top: 15px;
+}
+#left{
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+    display: flex;
+
+}
+a{
+    color: white;
+    text-decoration: none;
+    
+}
+#menu{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    padding-left: 5px;
+    
+}
+input{
+    width: 60%;
+    border-radius: 30px;
+    border: 0px;
+    line-height: 20px;
+    padding-inline: 20px;
+    /* height: 40px;
+    padding: 0px; */
+}
+#login,#cart,#signup{
+    padding-top: 10px;
+}

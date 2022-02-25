@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Clothes | Shop for Women's Fashion | ASOS</title>
+    <link rel="stylesheet" href="/style/navbar.css" />
+    <link rel="stylesheet" href="/style/woman.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+</head>
+<body>
+    <div id="navbar">
+        <div id="container">
+            <div id="left">
+                <div id = "logo"><a href = "home.html">ASOS</a></div>
+                <div id="menu">
+                     <div><a href = "women.html">WOMEN</a></div>
+                     <div><a href = "men.html">MEN</a></div>
+                 </div>
+            </div>
+            <div id = "right">
+                 <input type="search" name="" id="search" placeholder="Search For Items and Brands">
+                 <div id = "login"><a href = "login.html">Login</a></div>
+                 <div id = "signup"><a href = "signup.html">Sign Up</a></div>
+                 <div id = "cart"><a href = "cart.html">Cart</a></div>
+            </div>
+        </div>
+    </div>
+    <div id = "pagetitle">Woman's Products</div>
+
+    <div id="filters">
+        <button onclick="window.location.href='cart.html'" class = "button">Go To Cart</button>
+        <select name="" id="selectprice" onchange="handlePriceSort()">
+            <option value="">Price to Short</option>
+            <option value="high">High to Low</option>
+            <option value="low">Low to High</option>
+        </select>
+
+        <select name="" id="brands">
+            <option value="">Select Brands</option>
+            <option value="">ASOS</option>
+        </select>
+
+    </div>
+
+    <div id="cont"></div>
+    <div id = "footer">
+        <div id="footertop">
+            <div>
+                <p class = "mainheading">HELP & INFORMATION</p>
+                <p>Help</p>
+                <p>Track Order</p>
+                <p>Deleivery & Returns</p>
+            </div>
+            <div>
+                <p class = "mainheading">ABOUT ASOS</p>
+                <p>About us</p>
+                <p>Careers at ASOS</p>
+                <p>Corpaorate Responsibilites</p>
+                <p>Investors' site</p>
+            </div>
+            <div>
+                <p class = "mainheading">MORE FROM ASOS</p>
+                <p>Mobile and ASOS apps</p>
+                <p>ASOS Maeketplace</p>
+                <p>Gift Vochers</p>
+                <p>Black Friday</p>
+            </div>
+            <div>
+                <p class = "mainheading">SHOPPING FROM.</p>
+                <p>You're in India | Change</p>
+            </div>
+        </div>
+        <div id="footerend">
+            <div id = "copyright">Copyright © 2022</div>
+            <div id = "footermenu">Privacy Policy | T & C | Accessibility</div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="./Script/woman.js"></script>
+<script>
+    var womanData = JSON.parse(localStorage.getItem("womanProducts"));
+    var cartArr = JSON.parse(localStorage.getItem("cartItems")) || [];
+    displayData(womanData)
+    function handlePriceSort(){
+        var selected = document.querySelector("#selectprice").value;
+        // console.log(selected)
+        if(selected=="high") {
+            womanData.sort(function(a,b){
+                return Number(b.price) - Number(a.price);
+            })
+        }
+        if(selected == "low") {
+            womanData.sort(function(a,b){
+                return Number(a.price) - Number(b.price);
+            })
+        }
+        console.log(womanData)
+        displayData(womanData)
+    }
+
+    function displayData(womanData) {
+        womanProducts.map(function(elem){
+    var div = document.createElement("div");
+
+    var image = document.createElement("img");
+    image.setAttribute("src",elem.image);
+    image.setAttribute("id","productimage");
+
+    var title = document.createElement("p");
+    title.innerText = elem.discription;
+    title.setAttribute("id","title")
+
+    var d = document.createElement("div");
+    d.setAttribute("id","first");
+    var d1 = document.createElement("div");
+    var price = document.createElement("p");
+    price.innerText = elem.price;
+    price.setAttribute("class","price")
+    d1.append(price);
+
+    var d2 = document.createElement("div");
+    var btn = document.createElement("button");
+    btn.textContent = "Add to Cart";
+    btn.addEventListener("click",function(){
+        addCart(elem);
+    });
+
+    btn.setAttribute("class","btn")
+    d2.append(btn);
+    
+    d.append(d1,d2);
+   
+
+    div.append(image,title,d);
+    document.querySelector("#cont").append(div);
+});
+    }
+</script>
